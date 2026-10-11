@@ -1,0 +1,8 @@
+# Racket build artifacts
+compiled/
+*.zo
+*.so
+*.dep
+
+# Scribble scratch output
+doc/
