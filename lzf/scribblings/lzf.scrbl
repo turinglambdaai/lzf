@@ -48,13 +48,13 @@ The wire format, for reference (from the comment in @tt{lzf_c.c}):
  Compresses @racket[bs] with a greedy encoder and returns a liblzf-format
  byte string.
 
- The encoder uses a single-slot hash table of @math{2^13} slots (liblzf's
+ The encoder uses a single-slot hash table of @tt{2^13} slots (liblzf's
  low-memory configuration, @tt{HLOG} = 13) with liblzf's default
  (@tt{VERY_FAST}) post-match insertion policy, and it never emits a back
  reference into position 0, exactly like the C encoder. The output is
  deterministic: the same input always produces the same bytes.
 
- Back references span at most @math{2^13} bytes of distance and copy at
+ Back references span at most @tt{2^13} bytes of distance and copy at
  most 264 bytes; literal runs hold at most 33 bytes. Compressing the empty
  byte string returns the empty byte string.
 }
