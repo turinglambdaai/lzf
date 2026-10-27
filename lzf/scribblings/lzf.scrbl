@@ -98,8 +98,8 @@ The wire format, for reference (from the comment in @tt{lzf_c.c}):
 Both directions treat the empty byte string as empty:
 
 @interaction[#:eval lzf-eval
-(lzf-compress "")
-(lzf-decompress "")
+(lzf-compress #"")
+(lzf-decompress #"")
 ]
 
 Decoding corrupt data raises @racket[exn:fail]; it never crashes:
