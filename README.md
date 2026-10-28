@@ -22,12 +22,15 @@ implemented against the reference C sources in the Redis repository.
 ## Installation
 
 ```
+raco pkg install lzf                 # from the Racket package catalog
+# or in a repository checkout:
 raco pkg install --auto --link /path/to/lzf
 ```
 
 ## Usage
 
 ```racket
+#lang racket/base
 (require lzf)
 
 (define compressed (lzf-compress #"some data, some data, some data"))
@@ -66,6 +69,28 @@ default build policy (`VERY_FAST`-style single-slot insertion), initializes
 the table to empty (deterministic output, unlike liblzf's default
 uninitialized stack table), and, like liblzf, never emits a back reference
 into position 0.
+
+## API reference and verified development
+
+The [Scribble API reference](lzf/scribblings/lzf.scrbl) describes the public
+contracts, deterministic encoding, buffer growth, invalid input and wire
+format. The manual's examples are evaluated while the docs are built.
+The [standalone quickstart](examples/quickstart.rkt) verifies compression,
+round-trip decompression, explicit `#:hint 0` buffer growth, deterministic
+output and empty byte strings without needing any liblzf installation.
+
+From the repository root, with Racket and `raco` installed:
+
+```sh
+raco pkg install --auto --link "$(pwd)"
+raco test -p lzf
+racket examples/quickstart.rkt
+raco setup --check-pkg-deps -l lzf
+```
+
+These steps run in the Linux, Windows and macOS CI matrix. The package
+contains a `lzf` collection inside the `lzf` package
+(`info.rkt` declares a multi-collection package).
 
 ## Limitations
 

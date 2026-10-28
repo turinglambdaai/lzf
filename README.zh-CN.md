@@ -22,12 +22,15 @@ FFI，也没有系统依赖。
 ## 安装
 
 ```
+raco pkg install lzf                 # Racket 包目录安装
+# 或者在仓库检出目录中：
 raco pkg install --auto --link /path/to/lzf
 ```
 
 ## 用法
 
 ```racket
+#lang racket/base
 (require lzf)
 
 (define compressed (lzf-compress #"some data, some data, some data"))
@@ -61,6 +64,26 @@ LLLooooo oooooooo           ; back reference, L+2 octets, offset o+1
 默认构建策略（`VERY_FAST` 风格的单槽插入），将表初始化为空（输出
 确定，不同于 liblzf 默认未初始化的栈上表），并且与 liblzf 一样，绝不
 向位置 0 发出回溯引用。
+
+## API 文档与测试
+
+[完整 Scribble API 手册](lzf/scribblings/lzf.scrbl)说明公开契约、
+确定性编码、输出缓冲增长、错误输入及字节格式。文档示例在构建时执行。
+[独立可运行示例](examples/quickstart.rkt)验证压缩/解压往返、
+`#:hint 0` 时的缓冲增长、重复输入输出确定性和空字节串，
+无需安装任何 liblzf 系统库。
+
+在已安装 Racket 的仓库根目录执行：
+
+```sh
+raco pkg install --auto --link "$(pwd)"
+raco test -p lzf
+racket examples/quickstart.rkt
+raco setup --check-pkg-deps -l lzf
+```
+
+CI 在 Linux、Windows 与 macOS 上执行上述步骤。`lzf` 是公开的
+collection 名称；软件包本身是 `info.rkt` 声明的 multi-collection 结构。
 
 ## 局限
 
