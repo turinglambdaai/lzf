@@ -2,7 +2,7 @@
 
 **English** · [中文](README.zh-CN.md)
 
-[![CI](https://github.com/turinglambdaai/lzf/actions/workflows/ci.yml/badge.svg)](https://github.com/turinglambdaai/lzf/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/turlamai/lzf/actions/workflows/ci.yml/badge.svg)](https://github.com/turlamai/lzf/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 `lzf` is a pure-Racket implementation of the **LZF** compression format, the
 byte-level format produced and consumed by Marc Alexander Lehmann's

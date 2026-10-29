@@ -12,7 +12,7 @@
 (define deps '("base" "rackunit-lib"))
 (define build-deps '("base" "scribble-lib" "racket-doc" "rackunit-lib"))
 (define pkg-desc "Pure-Racket implementation of the liblzf (LZF) compression format used by Redis RDB files and python-lzf")
-(define pkg-authors '("turinglambdaai"))
+(define pkg-authors '("turlamai"))
 (define license 'MIT)
 ;; Loading the scribblings as a "test" produces no tests and noise; skip it.
 (define test-omit-paths '("lzf/scribblings"))
