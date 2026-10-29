@@ -2,7 +2,7 @@
 
 [English](README.md) · **中文**
 
-[![CI](https://github.com/turinglambdaai/lzf/actions/workflows/ci.yml/badge.svg)](https://github.com/turinglambdaai/lzf/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/turlamai/lzf/actions/workflows/ci.yml/badge.svg)](https://github.com/turlamai/lzf/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 `lzf` 是 **LZF** 压缩格式的纯 Racket 实现。LZF 是 Marc Alexander
 Lehmann 的 [liblzf](https://github.com/nullgemm/liblzf) 所生产与消费的
